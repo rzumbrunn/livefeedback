@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js" integrity="sha512-aMGMvNYu8Ue4G+fHa359jcPb1u+ytAF+P2SCb+PxrjCdO3n3ZTxJ30zuH39rimUggmTwmh2u7wvQsDTHESnmfQ==" crossorigin="anonymous"></script>
+    <script src="helpers.js"></script>
+    
+</head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1 class="col-md-12">Feedback</h1>
+                <p class="col-md-12">fastest</p>
+                <div class="col-md-12 feedback-container" >
+                    <input type="range" id="speed" name="speed" list="values" step="25"/>
+                    <datalist id="values">
+                        <option value="100" >Way too fast</option>
+                        <option value="75" >A bit too fast</option>
+                        <option value="50" >Perfect</option>
+                        <option value="25" >A bit too slow</option>
+                        <option value="0" >Way too slow</option>
+                    </datalist>
+                </div>
+                <p class="col-md-12">slowest</p>
+                <div class="col-md-12">
+                    <p>Speed value: <output id="value"></output></p>
+                    <p>Average speed value: <output id="avg_speed"></output></p>
+                </div>
+                <div class="col-md-12">
+                    <button id="panic_button" class="btn btn-outline-danger">!Get Support!</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="feedback.js"></script>
+    </body>
+
+</html>

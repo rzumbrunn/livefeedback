@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="admin.css">
+
+    <script src="helpers.js"></script>
+
+</head>
+<body>
+    <!-- Overview of livefeedback --> 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Livefeedback</h1>
+                <p>Livefeedback allows students in class to syncroniously send the perceived speed of the lecture</p>
+            </div>
+            <div class="col-md-12">
+                <h2>Average speed</h2>
+                <p id="avg_speed">Current average speed: - </p>
+            </div>  
+            <div class="col-md-12">
+                <h2>Number of participants</h2>
+                <p id="no_participants">No participants: - </p>
+            </div>
+            <div class="col-md-12">
+                <h1 id="speed_instruction"> Speed instruction </h1>
+            </div>
+            <div class="col-md-12">
+                <h1 id="panic_display" style="color:red"> !!!Stop!!! </h1>
+            </div>
+            <div class="col-md-12">
+                <button id="reset_button" class="btn btn-outline-danger">Reset</button>
+            </div>
+        </div> 
+
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>

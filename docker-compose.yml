@@ -1,0 +1,32 @@
+version: "3.9"
+services:
+  livefeedback:
+    container_name: LiveFeedback
+    image: flask_livefeedback
+    env_file:
+      - .env
+    ports:
+      - "54321:5000"
+    volumes:
+      - type: bind
+        source: ./flask_server/data
+        target: /app/data
+      - type: bind
+        source: ./flask_server/logs
+        target: /logs
+    depends_on:
+    - redis
+    links:
+    - redis
+    environment:
+      PYTHONUNBUFFERED: 1
+    restart: unless-stopped
+  redis:
+    container_name: Redis
+    image: redis/redis-stack-server:latest
+    volumes:
+      - type: bind
+        source: ./redis
+        target: /data
+    restart: unless-stopped
+ 
